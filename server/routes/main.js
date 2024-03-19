@@ -1,4 +1,4 @@
-const { insertData, getData, getCode } = require('../controllers/controller');
+const { insertData, getData, getCode } = require('../controllers/Controller');
 const { asyncError } = require('../error/error');
 
 const router = require('express').Router();
