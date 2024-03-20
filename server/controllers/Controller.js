@@ -27,7 +27,7 @@ const controller = {
 
         console.log({ output });
 
-        if (!output || output.stderr || !output.time ) return errorHandler(res, 400, output?.stderr ? output.stderr : 'Syntax error or judge0 api limit exceeded');
+        if (!output || output.stderr  ) return errorHandler(res, 400, output?.stderr ? output.stderr : 'Syntax error or judge0 api limit exceeded');
 
         // sql query to insert data into table userCodes
         const query = `INSERT INTO data (username, language, stdin, code,stdout)
