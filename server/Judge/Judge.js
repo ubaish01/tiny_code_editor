@@ -27,6 +27,7 @@ const ExecuteCode = async (code, input, language) => {
         const response = await axios.request(options);
         const token = response.data;
         const result = await getExecutionResult(token.token);
+        console.log({result});
         return result;
     } catch (error) {
         console.log(error);
@@ -44,7 +45,7 @@ const getExecutionResult = async (token) => {
 
     try {
         const response = await axios.get(url, { headers: headers });
-        // console.log(response);
+        console.log({response:response.data});
 
         return response.data;
     } catch (error) {
